@@ -1,5 +1,5 @@
-import isBlank from "./is_blank.ts";
-import isNullish from "./is_nullish.ts";
+import { isBlank } from "./is_blank.ts";
+import { isNullish } from "./is_nullish.ts";
 
 // deno-lint-ignore no-explicit-any
 declare function validateFunction(value: any): null | string;
