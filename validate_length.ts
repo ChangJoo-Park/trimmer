@@ -1,31 +1,31 @@
 import { hasLength } from "./has_length.ts";
 
-interface lengthValidate {
+interface LengthValidate {
   minimum: number;
   maximum: number;
 }
 
-interface minimumLengthValidate {
+interface MinimumLengthValidate {
   minimum: number;
 }
 
-interface maximumLengthValidate {
+interface MaximumLengthValidate {
   maximum: number;
 }
 
-interface exactLengthValidate {
+interface ExactLengthValidate {
   is: number;
 }
 
 // deno-lint-ignore no-explicit-any
-function isLengthValidate(options: any): options is lengthValidate {
+function isLengthValidate(options: any): options is LengthValidate {
   return "minimum" in options || "maximum" in options;
 }
 
 function isMinimumLengthValidate(
   // deno-lint-ignore no-explicit-any
   options: any,
-): options is minimumLengthValidate {
+): options is MinimumLengthValidate {
   const hasMinimum = "minimum" in options;
   const hasMaximum = "maximum" in options;
   return hasMinimum && !hasMaximum;
@@ -34,14 +34,14 @@ function isMinimumLengthValidate(
 function isMaximumLengthValidate(
   // deno-lint-ignore no-explicit-any
   options: any,
-): options is maximumLengthValidate {
+): options is MaximumLengthValidate {
   const hasMinimum = "minimum" in options;
   const hasMaximum = "maximum" in options;
   return !hasMinimum && hasMaximum;
 }
 
 // deno-lint-ignore no-explicit-any
-function isExactLengthValidate(options: any): options is exactLengthValidate {
+function isExactLengthValidate(options: any): options is ExactLengthValidate {
   return "is" in options;
 }
 
@@ -49,10 +49,10 @@ export const validateLength = (
   // deno-lint-ignore no-explicit-any
   value: any,
   options:
-    | lengthValidate
-    | minimumLengthValidate
-    | maximumLengthValidate
-    | exactLengthValidate,
+    | LengthValidate
+    | MinimumLengthValidate
+    | MaximumLengthValidate
+    | ExactLengthValidate,
 ): boolean => {
   if (!hasLength(value)) {
     return false;
