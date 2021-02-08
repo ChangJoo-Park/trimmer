@@ -1,19 +1,19 @@
 import { hasLength } from "./has_length.ts";
 
-export interface lengthValidate {
+interface lengthValidate {
   minimum: number;
   maximum: number;
 }
 
-export interface minimumLengthValidate {
+interface minimumLengthValidate {
   minimum: number;
 }
 
-export interface maximumLengthValidate {
+interface maximumLengthValidate {
   maximum: number;
 }
 
-export interface exactLengthValidate {
+interface exactLengthValidate {
   is: number;
 }
 
