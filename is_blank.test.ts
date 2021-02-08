@@ -1,5 +1,5 @@
 import { assertEquals } from "./deps.ts";
-import isBlank from "./is_blank.ts";
+import { isBlank } from "./is_blank.ts";
 
 Deno.test("empty string is blank", () => assertEquals(isBlank(""), true));
 

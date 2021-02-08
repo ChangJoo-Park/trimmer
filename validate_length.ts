@@ -1,4 +1,4 @@
-import hasLength from "./has_length.ts";
+import { hasLength } from "./has_length.ts";
 
 export interface lengthValidate {
   minimum: number;
@@ -45,7 +45,7 @@ function isExactLengthValidate(options: any): options is exactLengthValidate {
   return "is" in options;
 }
 
-export default function validateLength(
+export const validateLength = (
   // deno-lint-ignore no-explicit-any
   value: any,
   options:
@@ -53,7 +53,7 @@ export default function validateLength(
     | minimumLengthValidate
     | maximumLengthValidate
     | exactLengthValidate,
-): boolean {
+): boolean => {
   if (!hasLength(value)) {
     return false;
   }
@@ -80,4 +80,4 @@ export default function validateLength(
   }
 
   return false;
-}
+};

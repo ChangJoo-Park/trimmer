@@ -9,6 +9,7 @@
  * - undefined
  */
 // deno-lint-ignore no-explicit-any
-export default function isNullish(value: any) {
-  return value === undefined || value === null || value === 0 || value === '' || isNaN(value)
-}
+export const isNullish = (value: any) => {
+  return value === undefined || value === null || value === 0 || value === "" ||
+    isNaN(value);
+};

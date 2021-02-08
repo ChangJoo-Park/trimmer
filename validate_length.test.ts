@@ -1,5 +1,5 @@
 import { assertEquals } from "./deps.ts";
-import validateLength from './validate_length.ts';
+import { validateLength } from './validate_length.ts';
 
 Deno.test('Validate Length name Park is 4 characters', () => {
   assertEquals(validateLength('Park', { is: 4 }), true)

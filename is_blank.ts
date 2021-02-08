@@ -1,5 +1,5 @@
 // deno-lint-ignore no-explicit-any
-export default function isBlank(value: any): boolean {
+export const isBlank = (value: any): boolean => {
   const isArray = Array.isArray(value);
   const isString = typeof value === "string";
   const isObject = typeof value === "object" && value !== null;
@@ -16,4 +16,4 @@ export default function isBlank(value: any): boolean {
     return Object.keys(value).length === 0;
   }
   return false;
-}
+};
