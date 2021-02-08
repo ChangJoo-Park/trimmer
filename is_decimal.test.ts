@@ -33,10 +33,10 @@ Deno.test("-10.0 is decimal", () => {
   assertEquals(isDecimal("-10.0"), true);
 });
 
-Deno.test("10. is decimal", () => {
+Deno.test("10. is not decimal", () => {
   assertEquals(isDecimal("10."), false);
 });
 
-Deno.test("10. is decimal", () => {
+Deno.test("10. is not decimal", () => {
   assertEquals(isDecimal("-10."), false);
 });
